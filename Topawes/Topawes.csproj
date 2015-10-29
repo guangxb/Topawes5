@@ -1,0 +1,394 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{CDC00446-EBA3-405A-9E27-1ED8B4DBDE84}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Topawes</RootNamespace>
+    <AssemblyName>Topawes</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Interop.MSHTML">
+      <HintPath>..\MSHTML\Interop.MSHTML.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="LiteDB, Version=1.0.4.0, Culture=neutral, PublicKeyToken=5c2fff750805920e, processorArchitecture=MSIL">
+      <HintPath>..\packages\LiteDB.1.0.4\lib\net40\LiteDB.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.SignalR.Client, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.SignalR.Client.2.2.0\lib\net45\Microsoft.AspNet.SignalR.Client.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=7.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.7.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="TopSdk">
+      <HintPath>..\TopSdk\TopSdk.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AppQueues.cs" />
+    <Compile Include="AppSettingForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AppSettingForm.designer.cs">
+      <DependentUpon>AppSettingForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BaseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaseForm.designer.cs">
+      <DependentUpon>BaseForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BizEventArgs\AccountBizEventArgs.cs" />
+    <Compile Include="BizEventArgs\IndexBizEventArgs.cs" />
+    <Compile Include="BizEventArgs\ItemBizEventArgs.cs" />
+    <Compile Include="BizEventArgs\StockBizEventArgs.cs" />
+    <Compile Include="BizEventArgs\TradeBizEventArgs.cs" />
+    <Compile Include="BlackListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BlackListForm.designer.cs">
+      <DependentUpon>BlackListForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EasyHtml\Core\Data\IPagingData.cs" />
+    <Compile Include="EasyHtml\Core\Data\PagingExtension.cs" />
+    <Compile Include="EasyHtml\Core\Fluent\ConvertExtensions.cs" />
+    <Compile Include="EasyHtml\Core\Fluent\DisposableHelper.cs" />
+    <Compile Include="EasyHtml\Core\Fluent\EnumerableExtension.cs" />
+    <Compile Include="EasyHtml\Core\Fluent\StringExtensions.cs" />
+    <Compile Include="EasyHtml\Core\KeyedCache.cs" />
+    <Compile Include="EasyHtml\Core\Parser\TokenizerBase.cs" />
+    <Compile Include="EasyHtml\Core\ReadOnlyEnumerable.cs" />
+    <Compile Include="EasyHtml\Html\Css\CacheableSelector.cs" />
+    <Compile Include="EasyHtml\Html\Css\CssAttributeSelector.cs" />
+    <Compile Include="EasyHtml\Html\Css\CssCasecadingSelector.cs" />
+    <Compile Include="EasyHtml\Html\Css\CssElementSelector.cs" />
+    <Compile Include="EasyHtml\Html\Css\CssElementsRestrictionSelector.cs" />
+    <Compile Include="EasyHtml\Html\Css\CssMultipleSelector.cs" />
+    <Compile Include="EasyHtml\Html\Css\CssParser.cs" />
+    <Compile Include="EasyHtml\Html\Css\CssPropertyParser.cs" />
+    <Compile Include="EasyHtml\Html\Css\CssRelativeSelector.cs" />
+    <Compile Include="EasyHtml\Html\Css\CssSelector.cs" />
+    <Compile Include="EasyHtml\Html\Css\CssSpecificity.cs" />
+    <Compile Include="EasyHtml\Html\Css\CssStyle.cs" />
+    <Compile Include="EasyHtml\Html\Css\CssStyleProperty.cs" />
+    <Compile Include="EasyHtml\Html\Css\CssStyleSpecificationBase.cs" />
+    <Compile Include="EasyHtml\Html\Css\ICssPseudoClassProvider.cs" />
+    <Compile Include="EasyHtml\Html\Css\ICssPseudoClassSelector.cs" />
+    <Compile Include="EasyHtml\Html\Css\ICssSelector.cs" />
+    <Compile Include="EasyHtml\Html\Css\ICssStyleShorthandRule.cs" />
+    <Compile Include="EasyHtml\Html\Css\InternalPseudoClassProvider.cs" />
+    <Compile Include="EasyHtml\Html\Css\ISelector.cs" />
+    <Compile Include="EasyHtml\Html\Css\NegationPseudoClass.cs" />
+    <Compile Include="EasyHtml\Html\Css\SelectorExtensions.cs" />
+    <Compile Include="EasyHtml\Html\EnumerableWrapper.cs" />
+    <Compile Include="EasyHtml\Html\Extensions\AttributeExtensions.cs" />
+    <Compile Include="EasyHtml\Html\Extensions\ContentExtensions.cs" />
+    <Compile Include="EasyHtml\Html\Extensions\DocumentExtensions.cs" />
+    <Compile Include="EasyHtml\Html\Extensions\DomExtensions.cs" />
+    <Compile Include="EasyHtml\Html\Extensions\DomModifierExtensions.cs" />
+    <Compile Include="EasyHtml\Html\Extensions\ExpandedDomExtensions.cs" />
+    <Compile Include="EasyHtml\Html\Extensions\ExpandedNavigateExtensions.cs" />
+    <Compile Include="EasyHtml\Html\Extensions\LocationExtensions.cs" />
+    <Compile Include="EasyHtml\Html\Extensions\NavigateExtensions.cs" />
+    <Compile Include="EasyHtml\Html\Extensions\ParserExtension.cs" />
+    <Compile Include="EasyHtml\Html\Extensions\StyleExtensions.cs" />
+    <Compile Include="EasyHtml\Html\Html41Specification.cs" />
+    <Compile Include="EasyHtml\Html\Html5DraftSpecification.cs" />
+    <Compile Include="EasyHtml\Html\HtmlDocumentWrapper.cs" />
+    <Compile Include="EasyHtml\Html\HtmlDomDependency.cs" />
+    <Compile Include="EasyHtml\Html\HtmlElementAdapter.cs" />
+    <Compile Include="EasyHtml\Html\HtmlElementWrapper.cs" />
+    <Compile Include="EasyHtml\Html\HtmlEncoding.cs" />
+    <Compile Include="EasyHtml\Html\HtmlNodeWrapper.cs" />
+    <Compile Include="EasyHtml\Html\HtmlRange.cs" />
+    <Compile Include="EasyHtml\Html\HtmlRenderContext.cs" />
+    <Compile Include="EasyHtml\Html\HtmlSpecificationBase.cs" />
+    <Compile Include="EasyHtml\Html\IHtmlAttribute.cs" />
+    <Compile Include="EasyHtml\Html\IHtmlCollection.cs" />
+    <Compile Include="EasyHtml\Html\IHtmlComment.cs" />
+    <Compile Include="EasyHtml\Html\IHtmlContainer.cs" />
+    <Compile Include="EasyHtml\Html\IHtmlDocument.cs" />
+    <Compile Include="EasyHtml\Html\IHtmlDomModifier.cs" />
+    <Compile Include="EasyHtml\Html\IHtmlDomObject.cs" />
+    <Compile Include="EasyHtml\Html\IHtmlDomProvider.cs" />
+    <Compile Include="EasyHtml\Html\IHtmlElement.cs" />
+    <Compile Include="EasyHtml\Html\IHtmlFragment.cs" />
+    <Compile Include="EasyHtml\Html\IHtmlFragmentManager.cs" />
+    <Compile Include="EasyHtml\Html\IHtmlNode.cs" />
+    <Compile Include="EasyHtml\Html\IHtmlParser.cs" />
+    <Compile Include="EasyHtml\Html\IHtmlRenderable.cs" />
+    <Compile Include="EasyHtml\Html\IHtmlRenderAdapter.cs" />
+    <Compile Include="EasyHtml\Html\IHtmlSpecial.cs" />
+    <Compile Include="EasyHtml\Html\IHtmlTextNode.cs" />
+    <Compile Include="EasyHtml\Html\Parser\ContentModels\HtmlAttributeSetting.cs" />
+    <Compile Include="EasyHtml\Html\Parser\ContentModels\HtmlBeginTag.cs" />
+    <Compile Include="EasyHtml\Html\Parser\ContentModels\HtmlCommentContent.cs" />
+    <Compile Include="EasyHtml\Html\Parser\ContentModels\HtmlContentFragment.cs" />
+    <Compile Include="EasyHtml\Html\Parser\ContentModels\HtmlDoctypeDeclaration.cs" />
+    <Compile Include="EasyHtml\Html\Parser\ContentModels\HtmlEndTag.cs" />
+    <Compile Include="EasyHtml\Html\Parser\ContentModels\HtmlSpecialTag.cs" />
+    <Compile Include="EasyHtml\Html\Parser\ContentModels\HtmlTextContent.cs" />
+    <Compile Include="EasyHtml\Html\Parser\DomAttribute.cs" />
+    <Compile Include="EasyHtml\Html\Parser\DomComment.cs" />
+    <Compile Include="EasyHtml\Html\Parser\DomDocument.cs" />
+    <Compile Include="EasyHtml\Html\Parser\DomDocumentType.cs" />
+    <Compile Include="EasyHtml\Html\Parser\DomElement.cs" />
+    <Compile Include="EasyHtml\Html\Parser\DomFragment.cs" />
+    <Compile Include="EasyHtml\Html\Parser\DomFragmentManager.cs" />
+    <Compile Include="EasyHtml\Html\Parser\DomModifier.cs" />
+    <Compile Include="EasyHtml\Html\Parser\DomNode.cs" />
+    <Compile Include="EasyHtml\Html\Parser\DomNodeCollection.cs" />
+    <Compile Include="EasyHtml\Html\Parser\DomObject.cs" />
+    <Compile Include="EasyHtml\Html\Parser\DomProvider.cs" />
+    <Compile Include="EasyHtml\Html\Parser\DomSpecial.cs" />
+    <Compile Include="EasyHtml\Html\Parser\DomTextNode.cs" />
+    <Compile Include="EasyHtml\Html\Parser\HtmlParserBase.cs" />
+    <Compile Include="EasyHtml\Html\Parser\IDomContainer.cs" />
+    <Compile Include="EasyHtml\Html\Parser\IDomFragmentParserProvider.cs" />
+    <Compile Include="EasyHtml\Html\Parser\IHtmlReader.cs" />
+    <Compile Include="EasyHtml\Html\Parser\JumonyParser.cs" />
+    <Compile Include="EasyHtml\Html\Parser\JumonyReader.cs" />
+    <Compile Include="EasyHtml\Html\Parser\Regulars.cs" />
+    <Compile Include="EasyHtml\Html\Regulars.cs" />
+    <Compile Include="EasyHtml\Html\Styles\StyleClassManager.cs" />
+    <Compile Include="EasyHtml\Html\Styles\StyleManager.cs" />
+    <Compile Include="EasyHtml\Html\SynchronizedCollection.cs" />
+    <Compile Include="EditTextLinesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditTextLinesForm.designer.cs">
+      <DependentUpon>EditTextLinesForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Extensions\ListExtension.cs" />
+    <Compile Include="Extensions\LiteDbExtension.cs" />
+    <Compile Include="Extensions\ProductItemExtension.cs" />
+    <Compile Include="Extensions\StringExtensions.cs" />
+    <Compile Include="Helpers\AppDatabase.cs" />
+    <Compile Include="Helpers\AppDataStorage.cs" />
+    <Compile Include="Helpers\AppSetttings.cs" />
+    <Compile Include="Helpers\DataGridOpr.cs" />
+    <Compile Include="Helpers\DWebBrowserEvents2.cs" />
+    <Compile Include="Helpers\DynamicJson.cs" />
+    <Compile Include="Helpers\Encryption.cs" />
+    <Compile Include="Helpers\HtmlHelper.cs" />
+    <Compile Include="Helpers\IEFeatureControl.cs" />
+    <Compile Include="Helpers\ProductItemHelper.cs" />
+    <Compile Include="Helpers\SynchronousNavigationContext.cs" />
+    <Compile Include="Helpers\UrlHelper.cs" />
+    <Compile Include="Helpers\WBHelper.cs" />
+    <Compile Include="HtmlEntity\TableEntity.cs" />
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MessageHubClient.cs" />
+    <Compile Include="Models\InterceptInfo.cs" />
+    <Compile Include="Models\Statistic.cs" />
+    <Compile Include="Models\TaoJsonpResult.cs" />
+    <Compile Include="ModifyStockQtyForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModifyStockQtyForm.designer.cs">
+      <DependentUpon>ModifyStockQtyForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SelectAccountForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SelectAccountForm.designer.cs">
+      <DependentUpon>SelectAccountForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SetProfitForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SetProfitForm.designer.cs">
+      <DependentUpon>SetProfitForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Settings.cs" />
+    <Compile Include="States\WBTaoChongZhiBrowserMode.cs" />
+    <Compile Include="States\WBTaoDurexValidationMode.cs" />
+    <Compile Include="States\WBTaoLoginMode.cs" />
+    <Compile Include="States\WebBrowserBaseState.cs" />
+    <Compile Include="States\WebBrowserMode.cs" />
+    <Compile Include="TaoLoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TaoLoginForm.designer.cs">
+      <DependentUpon>TaoLoginForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WhiteListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WhiteListForm.designer.cs">
+      <DependentUpon>WhiteListForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WinFormsClient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WinFormsClient.designer.cs">
+      <DependentUpon>WinFormsClient.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AppSettingForm.resx">
+      <DependentUpon>AppSettingForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseForm.resx">
+      <DependentUpon>BaseForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BlackListForm.resx">
+      <DependentUpon>BlackListForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditTextLinesForm.resx">
+      <DependentUpon>EditTextLinesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModifyStockQtyForm.resx">
+      <DependentUpon>ModifyStockQtyForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="SelectAccountForm.resx">
+      <DependentUpon>SelectAccountForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SetProfitForm.resx">
+      <DependentUpon>SetProfitForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TaoLoginForm.resx">
+      <DependentUpon>TaoLoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WhiteListForm.resx">
+      <DependentUpon>WhiteListForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WinFormsClient.resx">
+      <DependentUpon>WinFormsClient.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="Resources\Alipay Trust Network.cer" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="basket_buy_red_sell_shopping_128px_225_easyicon.net.ico" />
+    <Content Include="Resources\accept_list_24px_13500_easyicon.net.png" />
+    <Content Include="Resources\applications_internet_24px_509744_easyicon.net.png" />
+    <Content Include="Resources\applications_system_24px_509746_easyicon.net.png" />
+    <Content Include="Resources\arrow_down_24px_1180273_easyicon.net.png" />
+    <Content Include="Resources\arrow_down_24px_1180465_easyicon.net.png" />
+    <Content Include="Resources\arrow_up_24px_1180274_easyicon.net.png" />
+    <Content Include="Resources\arrow_up_24px_1180466_easyicon.net.png" />
+    <Content Include="Resources\ball_circle_orange_point_24px_2004_easyicon.net.png" />
+    <Content Include="Resources\basket_buy_red_sell_shopping_48px_225_easyicon.net.ico" />
+    <Content Include="Resources\close_24px_1159855_easyicon.net.png" />
+    <Content Include="Resources\dialog_information_24px_509705_easyicon.net.png" />
+    <Content Include="Resources\exchange_16px_1072104_easyicon.net.png" />
+    <Content Include="Resources\exchange_24px_1131468_easyicon.net.png" />
+    <Content Include="Resources\format_list_bulleted_24px_1181899_easyicon.net.png" />
+    <Content Include="Resources\green_dot_24px_520103_easyicon.net.png" />
+    <Content Include="Resources\Lock_32px_1134504_easyicon.net.png" />
+    <Content Include="Resources\Lock_Unlocked_24px_1134503_easyicon.net.png" />
+    <Content Include="Resources\minus_red_24px_504650_easyicon.net.png" />
+    <Content Include="Resources\phone_24px_1180573_easyicon.net.png" />
+    <Content Include="Resources\plus_grey_24px_504660_easyicon.net.png" />
+    <Content Include="Resources\point_amp_Shoort_camera_24px_1184021_easyicon.net.png" />
+    <Content Include="Resources\qq_22.5px_1164502_easyicon.net.png" />
+    <Content Include="Resources\qq_24px_1164430_easyicon.net.png" />
+    <Content Include="Resources\Refresh_16px_1186205_easyicon.net.png" />
+    <Content Include="Resources\refresh_24px_1140121_easyicon.net.png" />
+    <Content Include="Resources\refresh_24px_1170291_easyicon.net.png" />
+    <Content Include="Resources\shoping_cart_48px_1113462_easyicon.net.ico" />
+    <Content Include="Resources\stock_lock_24px_509820_easyicon.net.png" />
+    <Content Include="Resources\stock_task_24px_1078499_easyicon.net.png" />
+    <Content Include="Resources\stock_task_assigned_24px_1078500_easyicon.net.png" />
+    <Content Include="Resources\stock_task_assigned_to_24px_1078501_easyicon.net.png" />
+    <Content Include="Resources\stock_task_recurring_24px_1078502_easyicon.net.png" />
+    <Content Include="Resources\To_do_list_24px_1061515_easyicon.net.png" />
+    <Content Include="Resources\ui_menu_16px_514870_easyicon.net.png" />
+    <Content Include="Resources\ui_menu_blue_16px_514871_easyicon.net.png" />
+    <Content Include="Resources\user_24px_1130007_easyicon.net.png" />
+    <Content Include="Resources\view_list_tree_24px_540199_easyicon.net.png" />
+    <Content Include="Resources\white_list_24px_573221_easyicon.net.png" />
+    <Content Include="Resources\X_close_24px_1187252_easyicon.net.png" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\..\Moonlight\Moonlight\Moonlight.csproj">
+      <Project>{4d865e40-4f31-4cad-ac01-cb3950c57437}</Project>
+      <Name>Moonlight</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Topawes.Model\Topawes.Model.csproj">
+      <Project>{1e52d516-aea4-4f5b-8e0c-ddaee91f4d78}</Project>
+      <Name>Topawes.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
